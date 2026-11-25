@@ -144,7 +144,7 @@ var STORY = {
         text: 'Friends invite you to games night.',
         choices: [
           { label: 'Say "maybe" and decide later', stress: 5, auto: true, why: 'Leaving it open means you carry the decision all evening.' },
-          { label: 'Go, you\'ve earned it', stress: -15, prep: -1, kind: 'disengage', why: 'The immediate reward wins. Stress drops, and so does study time.' },
+          { label: 'Go, you\'ve earned it', stress: -20, prep: -1, kind: 'disengage', why: 'The immediate reward wins. Stress drops, and so does study time.' },
           { label: 'Go, but leave by 10', stress: -10, brain: 'pfc', why: 'A planned break gives some reward now without giving up the later one.' },
           { label: 'Stay in and study', prep: 1, stress: 5, why: 'Choosing the delayed reward adds study time, at the cost of a stressful night in.' }
         ] },
@@ -152,7 +152,7 @@ var STORY = {
         text: 'GTA 6 just came out. Your roommate already has it installed and is yelling for you.',
         choices: [
           { label: 'Watch them play "for a minute"', stress: 5, auto: true, why: 'Half-watching means you carry the decision all evening.' },
-          { label: 'Play it, you\'ve earned it', stress: -15, prep: -1, kind: 'disengage', why: 'The immediate reward wins. Stress drops, and so does study time.' },
+          { label: 'Play it, you\'ve earned it', stress: -20, prep: -1, kind: 'disengage', why: 'The immediate reward wins. Stress drops, and so does study time.' },
           { label: 'One mission, then back to notes', stress: -10, brain: 'pfc', why: 'A planned break gives some reward now without giving up the later one.' },
           { label: 'Headphones on and study', prep: 1, stress: 5, why: 'Choosing the delayed reward adds study time, while the game waits.' }
         ] },
@@ -160,7 +160,7 @@ var STORY = {
         text: 'Krillion just dropped and literally everyone is talking about it.',
         choices: [
           { label: 'Keep it open in another tab', stress: 5, auto: true, why: 'Half on it, half on your notes: neither gets your full attention.' },
-          { label: 'Drop everything, you\'ve earned it', stress: -15, prep: -1, kind: 'disengage', why: 'The immediate reward wins. Stress drops, and so does study time.' },
+          { label: 'Drop everything, you\'ve earned it', stress: -20, prep: -1, kind: 'disengage', why: 'The immediate reward wins. Stress drops, and so does study time.' },
           { label: 'Give it 30 minutes, then study', stress: -10, brain: 'pfc', why: 'A planned break gives some reward now without giving up the later one.' },
           { label: 'Save it as a reward for after the exam', prep: 1, stress: 5, why: 'Delaying the reward adds study time, and something to look forward to.' }
         ] },
@@ -168,7 +168,7 @@ var STORY = {
         text: 'Halloween party tonight. Your friends already picked a costume for you.',
         choices: [
           { label: 'Say "maybe" and decide later', stress: 5, auto: true, why: 'Leaving it open means you carry the decision all evening.' },
-          { label: 'Go, you\'ve earned it', stress: -15, prep: -1, kind: 'disengage', why: 'The immediate reward wins. Stress drops, and so does study time.' },
+          { label: 'Go, you\'ve earned it', stress: -20, prep: -1, kind: 'disengage', why: 'The immediate reward wins. Stress drops, and so does study time.' },
           { label: 'Go, but leave by 11', stress: -10, brain: 'pfc', why: 'A planned break gives some reward now without giving up the later one.' },
           { label: 'Stay in and study', prep: 1, stress: 5, why: 'Choosing the delayed reward adds study time, at the cost of missing out.' }
         ] }
@@ -189,7 +189,7 @@ var STORY = {
         { label: '"Honestly, we\'re cooked"', stress: 15, auto: true, brain: 'amygdala', why: 'Agreeing it is hopeless feeds both of your stress responses.' },
         { label: '"Let\'s just do three more questions"', mindset: 1, stress: 5, why: 'A small, concrete goal turns panic into a challenge you can meet.' },
         { label: 'Admit you\'re stressed too', stress: -5, why: 'Sharing the feeling is support. Supportive relationships buffer stress.' },
-        { label: 'Make an excuse and leave', stress: -5, kind: 'disengage', why: 'Leaving drops the stress for now, and the support with it.' }
+        { label: 'Make an excuse and leave', stress: -10, kind: 'disengage', why: 'Leaving drops the stress for now, and the support with it.' }
       ] },
 
     // ---------- Act 2: Night before ----------
@@ -296,7 +296,7 @@ var STORY = {
         { label: 'Listen in', stress: 10, auto: true, brain: 'amygdala', why: 'Comparing yourself to others is a classic threat trigger.' },
         { label: 'Ask them to explain it quickly', stress: 10, why: 'You might learn it, but you are inviting more comparison.' },
         { label: 'Headphones in, eyes closed', stress: -5, kind: 'calm', why: 'Cutting off the comparison protects your focus.' },
-        { label: '"It\'s probably not even on it"', mindset: 1, stress: -20, kind: 'disengage', why: 'Dismissing the threat lowers stress, and your engagement with it.' }
+        { label: '"It\'s probably not even on it"', mindset: 1, stress: -25, kind: 'disengage', why: 'Dismissing the threat lowers stress, and your engagement with it.' }
       ] },
     // TODO team: placeholder. Concept: reframing the body's response; the amygdala does not respond to logic. Source: Yeager et al., 2022; McRae et al., 2012.
     { id: 'walkingIn', act: 3, bg: 'hallway', prop: 'thought',
@@ -308,10 +308,10 @@ var STORY = {
         { label: '"Ugh, why am I always like this"', mindset: -1, stress: 5, why: 'Judging yourself adds a second threat on top of the first.' }
       ] },
     // TODO team: placeholder. Concept: over-arousal; affect labelling. Source: Lieberman et al., 2007.
-    { id: 'bathroom', act: 3, if: function (s) { return s.stress > 85; }, bg: 'bathroom', prop: 'phone',
+    { id: 'bathroom', act: 3, if: function (s) { return s.stress > 75; }, bg: 'bathroom', prop: 'phone',
       text: 'The bathroom. Two minutes before the start.',
       choices: [
-        { label: 'Scroll your phone', stress: -5, auto: true, kind: 'disengage', why: 'Scrolling distracts, but does little to calm the body.' },
+        { label: 'Scroll your phone', stress: -10, auto: true, kind: 'disengage', why: 'Scrolling distracts, but does little to calm the body.' },
         { label: 'Splash cold water on your face', stress: -10, kind: 'calm', why: 'A physical jolt can interrupt the spiral.' },
         { label: 'Breathe out slower than you breathe in', stress: -15, kind: 'calm', brain: 'amygdala', why: 'Long exhales shift you toward the calming (parasympathetic) system.' },
         { label: 'Text a friend "I\'m freaking out"', stress: -10, kind: 'calm', brain: 'amygdala', why: 'Putting the feeling into words is affect labelling (Lieberman et al., 2007).' }
@@ -350,7 +350,7 @@ var STORY = {
         { label: 'Second-guess a few answers', stress: 5, auto: true, why: 'Checking without a reason mostly adds doubt.' },
         { label: 'Go back to the one you skipped', reopen: true, brain: 'pfc', why: 'Knowing which question you left is metacognition in action. (Only possible below 70 stress.)' },
         { label: 'Pen down, breathe', stress: -10, kind: 'calm', why: 'Ending calmly lets you leave the stress in the room.' },
-        { label: 'Hand it in early, you\'re done', stress: -15, kind: 'disengage', why: 'Relief now, but you give up the time you had left.' }
+        { label: 'Hand it in early, you\'re done', stress: -20, kind: 'disengage', why: 'Relief now, but you give up the time you had left.' }
       ] },
 
     // ---------- Act 4: After ----------
@@ -358,7 +358,7 @@ var STORY = {
     { id: 'grade', act: 4, bg: 'bedroomDay', prop: 'grade',
       text: 'The grade comes back.',
       choices: [
-        { label: 'Close the tab, don\'t look closer', stress: -5, auto: true, kind: 'disengage', why: 'Avoiding the result avoids the sting, and the lesson.' },
+        { label: 'Close the tab, don\'t look closer', stress: -10, auto: true, kind: 'disengage', why: 'Avoiding the result avoids the sting, and the lesson.' },
         { label: 'Compare grades with friends', stress: 10, mindset: -1, why: 'Comparison turns a grade into a ranking.' },
         { label: 'Check which ones you missed and why', mindset: 1, stress: 5, brain: 'pfc', why: 'Treating mistakes as information is a growth mindset.' },
         { label: '"I\'m just bad at this subject"', mindset: -1, why: 'Treating a grade as a fixed trait makes the next exam more threatening.' }
