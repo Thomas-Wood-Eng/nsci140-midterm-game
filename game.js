@@ -339,7 +339,7 @@
       var n = S.history.length;
       i = Rules.advance(STORY, i, S);
       var dr = S.history.length > n && S.history[S.history.length - 1];
-      if (dr && dr.drift) { // show the between-act settling so the meter never jumps unexplained
+      if (dr && dr.drift && Math.round(dr.before) !== Math.round(dr.after)) { // show the between-act settling so the meter never jumps unexplained
         render();
         await showCards('<p class="card">Time passes. Your stress settles from ' + Math.round(dr.before) + ' to ' + Math.round(dr.after) + '.</p>');
       }
@@ -395,7 +395,7 @@
       '<p class="endbtns"><button id="replay" class="big">Try a different path</button> ' +
       '<a href="' + esc(STORY.wellnessUrl) + '" target="_blank" rel="noopener">UBC student wellness resources</a></p>';
     $('endArt').innerHTML = '<svg viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice">' + BACKGROUNDS.walk() +
-      figure(e.key === 'window' ? 'relieved' : e.key === 'overwhelmed' ? 'exhausted' : 'neutral') + '</svg>';
+      figure(e.key === 'window' ? 'relieved' : e.key === 'overwhelmed' ? 'anxious' : 'neutral') + '</svg>';
     Array.prototype.forEach.call(document.querySelectorAll('.marker'), function (g) {
       function info() { $('markerInfo').textContent = g.getAttribute('data-desc'); }
       g.addEventListener('click', info);
