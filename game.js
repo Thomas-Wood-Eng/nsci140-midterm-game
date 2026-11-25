@@ -356,8 +356,6 @@
       '<rect x="40" y="' + y(30) + '" width="540" height="' + (y(0) - y(30)) + '" class="band-out"/>' +
       '<path d="M40 ' + y(90) + 'H580" class="freezeline"/>' +
       '<polyline points="' + pts.map(function (p, k) { return x(k).toFixed(1) + ',' + y(p).toFixed(1); }).join(' ') + '" class="route"/>' +
-      '<text x="44" y="' + (y(90) - 4) + '">Freeze (90+)</text><text x="44" y="' + (y(70) - 4) + '">Overwhelmed</text>' +
-      '<text x="44" y="' + (y(30) - 4) + '">The river: window of tolerance (30 to 70)</text><text x="44" y="' + (y(0) - 4) + '">Checked out</text>' +
       '<path transform="translate(' + x(pts.length - 1) + ' ' + y(pts[pts.length - 1]) + ')" d="M-10 0h20l-4 6h-12zM0 0v-18l10 14z" class="boat"/>';
     var top = h.map(function (e, k) { return { e: e, k: k }; }).filter(function (o) { return !o.e.drift; })
       .sort(function (a, b) { return Math.abs(b.e.after - b.e.before) - Math.abs(a.e.after - a.e.before); }).slice(0, 3);
@@ -388,6 +386,7 @@
       '<p class="lead">' + esc(E.text) + ' ' + esc(E[e.prep]) + '</p>' +
       '<p>Grade: ' + Rules.grade(S) + '/4. Average stress during the exam: ' + Math.round(e.avg) + ' (' + esc(E.title) + ').</p>' +
       '<h2>Your route</h2>' + routeChart() +
+      '<p class="legend"><span class="li"><span class="sw band-over"></span>Top: overwhelmed (above 70; dashed line = freeze at 90)</span> <span class="li"><span class="sw band-window"></span>Middle: the river, your window of tolerance (30 to 70)</span> <span class="li"><span class="sw band-out"></span>Bottom: checked out (below 30)</span></p>' +
       '<p id="markerInfo" class="card" aria-live="polite">Tap or focus a numbered marker to see the three choices that moved your stress the most.</p>' +
       '<div class="card"><strong>Your brain</strong><p>' + esc(STORY.endingBrain) + '</p></div>' +
       '<div class="card note"><strong>Takeaways</strong><ul>' + STORY.takeaways.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul></div>' +
