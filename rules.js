@@ -38,10 +38,11 @@ var Rules = (function () {
     return earned;
   }
 
-  // Between acts only: stress moves toward 45 by a share of the gap.
+  // Between acts only: stress moves toward 45 by a share of the gap, more with a challenge mindset.
+  // High stress settles slowly (10% to 40% of the gap); low stress rises faster as the exam gets closer (20% to 80%).
   function drift(state) {
-    var before = state.stress;
-    state.stress = clamp(before + (45 - before) * (0.5 + 0.1 * state.mindset), 0, 100);
+    var before = state.stress, share = before > 45 ? 0.25 + 0.05 * state.mindset : 0.5 + 0.1 * state.mindset;
+    state.stress = clamp(before + (45 - before) * share, 0, 100);
     state.history.push({ label: 'Time passes', before: before, after: state.stress, drift: true });
   }
 
