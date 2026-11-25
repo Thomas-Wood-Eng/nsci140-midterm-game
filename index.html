@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Midterm</title>
+  <link rel="stylesheet" href="style.css?v=3">
+</head>
+<body class="on-menu">
+  <div id="vignette" aria-hidden="true"></div>
+
+  <header id="riverbar">
+    <svg id="river" viewBox="0 0 400 48" role="img" aria-label="Stress meter">
+      <clipPath id="riverClip"><rect x="0" y="6" width="400" height="24" rx="12"/></clipPath>
+      <g clip-path="url(#riverClip)">
+        <rect x="0" y="6" width="120" height="24" class="z-out"/>
+        <rect x="120" y="6" width="160" height="24" class="z-window"/>
+        <rect x="280" y="6" width="80" height="24" class="z-over"/>
+        <rect x="360" y="6" width="40" height="24" class="z-freeze"/>
+        <path d="M0 22q10-3 20 0t20 0t20 0t20 0t20 0t20 0t20 0t20 0t20 0t20 0t20 0t20 0t20 0t20 0t20 0t20 0t20 0t20 0t20 0t20 0" class="wave"/>
+      </g>
+      <text x="60" y="44" text-anchor="middle">Checked out</text>
+      <text x="200" y="44" text-anchor="middle">The window</text>
+      <text x="320" y="44" text-anchor="middle">Overwhelmed</text>
+      <text x="380" y="44" text-anchor="middle">Freeze</text>
+      <g id="boat" transform="translate(140 0)"><path d="M-9 19h18l-4 6h-10zM0 19V1l9 15z" class="boat"/></g>
+    </svg>
+    <svg id="heart" viewBox="0 0 32 30" aria-hidden="true"><path d="M16 29C3 19 0 13 0 8a8 8 0 0 1 16-2a8 8 0 0 1 16 2c0 5-3 11-16 21z"/></svg>
+  </header>
+  <p id="stressLabel">Stress 35: In the window</p>
+
+  <main id="app">
+    <section id="start" class="menu">
+      <p class="kicker">A choose-your-own-adventure about exam stress</p>
+      <h1>The Midterm</h1>
+      <p id="intro"></p>
+      <button id="startBtn" class="big">Play</button>
+      <details>
+        <summary>How to play</summary>
+        <ul>
+          <li>Pick what you'd do. Each choice changes your stress, shown as the boat on the river at the top.</li>
+          <li>The goal is to stay in the window: some stress helps, too much or too little hurts.</li>
+          <li>Decisions are timed. If time runs out, the game picks for you.</li>
+          <li>Keys 1 to 4 pick choices in the order shown. Click the text or press Space to show it all at once.</li>
+        </ul>
+      </details>
+      <details>
+        <summary>Settings</summary>
+        <p><label><input type="checkbox" id="relaxedToggle"> Relaxed mode (no timers)</label></p>
+        <p class="hint">Reduce effects and heartbeat sound are at the bottom of the page and can be changed during play.</p>
+      </details>
+    </section>
+
+    <section id="game" hidden>
+      <h2 id="actTitle"></h2>
+      <div id="scenePanel">
+        <div id="art" class="art" aria-hidden="true"></div>
+        <div id="brainBox">
+          <div id="brain"></div>
+          <ul id="brainStatus" aria-live="off"></ul>
+          <p class="credit">Brain illustration: NIDA (public domain)</p>
+          <div id="brainInfo" hidden></div>
+        </div>
+      </div>
+      <p id="sceneText"></p>
+      <div id="cards"></div>
+      <div id="choiceRow">
+        <div id="choices" tabindex="-1" role="group" aria-label="Choices"></div>
+        <div id="side">
+          <div id="timer" hidden>
+            <svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="18" class="ring-bg"/><circle id="ringFg" cx="22" cy="22" r="18" class="ring-fg"/></svg>
+            <span id="timerSecs"></span><span class="sr-only"> seconds left</span>
+          </div>
+          <button id="brainBtn" aria-expanded="false" aria-controls="brainInfo">Brain</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="ending" hidden></section>
+  </main>
+
+  <footer>
+    <label><input type="checkbox" id="fxToggle"> Reduce effects (no blur, shake or motion)</label>
+    <button id="soundBtn" aria-pressed="true">Heartbeat sound: on</button>
+  </footer>
+
+  <div id="announce" class="sr-only" aria-live="polite"></div>
+
+  <script src="art/brain.js"></script>
+  <script src="story.js?v=3"></script>
+  <script src="rules.js?v=3"></script>
+  <script src="game.js?v=3"></script>
+</body>
+</html>
