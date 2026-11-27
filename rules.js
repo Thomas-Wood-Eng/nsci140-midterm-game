@@ -46,6 +46,9 @@ var Rules = (function () {
     state.history.push({ label: 'Time passes', before: before, after: state.stress, drift: true });
   }
 
+  // Choices on offer: "go back to the one you skipped" only shows if a question was skipped.
+  function offered(scene, state) { return scene.choices.filter(function (c) { return !c.reopen || state.skipped; }); }
+
   function visible(scene, state) {
     if (!scene.if) return true;
     return typeof scene.if === 'function' ? !!scene.if(state) : !!state.flags[scene.if];
@@ -131,7 +134,7 @@ var Rules = (function () {
 
   return {
     buildRun: buildRun, allScenes: allScenes,
-    pickQuestions: pickQuestions,
+    pickQuestions: pickQuestions, offered: offered,
     newState: newState, zone: zone, ZONE_LABEL: ZONE_LABEL, distFromWindow: distFromWindow,
     stressDelta: stressDelta, applyChoice: applyChoice, drift: drift, visible: visible, advance: advance,
     decisionTime: decisionTime, questionTime: questionTime, frozen: frozen, examPrep: examPrep,

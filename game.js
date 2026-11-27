@@ -108,9 +108,9 @@
   // Hotspots over the NIDA brain illustration (art/brain.js), in its own units (front of the brain is on the left).
   var REGIONS = {
     pfc: '<ellipse cx="11" cy="22" rx="7.5" ry="9"/>',
-    hypothalamus: '<circle cx="27" cy="37.5" r="2.6"/>',
-    amygdala: '<circle cx="30.5" cy="40" r="2.6"/>',
-    hippocampus: '<ellipse cx="37" cy="40.5" rx="4.2" ry="2.2" transform="rotate(-20 37 40.5)"/>'
+    hypothalamus: '<circle cx="26.5" cy="36.3" r="2.4"/>',
+    amygdala: '<circle cx="29.5" cy="40.3" r="2.5"/>',
+    hippocampus: '<ellipse cx="35.9" cy="40.7" rx="3.9" ry="2.8" transform="rotate(-5 35.9 40.7)"/>'
   };
   function buildBrain() {
     $('brain').innerHTML = BRAIN_SVG;
@@ -253,7 +253,7 @@
   // ---------------- Scene types ----------------
   async function decide(sc, act, text) {
     await say(text || sc.text);
-    var order = shuffle(sc.choices.slice());
+    var order = shuffle(Rules.offered(sc, S));
     var i = await ask(order.map(function (c) { return c.label; }), Rules.decisionTime(act, S.stress));
     var c = i < 0 ? order.filter(function (o) { return o.auto; })[0] : order[i];
     var before = S.stress, earned = Rules.applyChoice(S, c), d = Math.round(S.stress - before);

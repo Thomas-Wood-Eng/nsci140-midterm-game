@@ -60,7 +60,7 @@ function play(pick) {
         inRange(s);
         if (++loops > 100) { freezeOk = false; break; }
       }
-      const c = pick(s, scene.choices);
+      const c = pick(s, Rules.offered(scene, s));
       Rules.applyChoice(s, c);
       inRange(s);
       // Simulated player answers every question with the right option; the rules give marks
