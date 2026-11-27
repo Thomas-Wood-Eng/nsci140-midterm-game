@@ -150,7 +150,7 @@ var STORY = {
       { id: 'gamesNight', act: 1, bg: 'bedroomNight', prop: 'phone',
         text: 'Friends invite you to games night.',
         choices: [
-          { label: 'Say "maybe" and decide later', stress: 5, auto: true, why: 'Leaving it open means you carry the decision all evening.' }, // (none)
+          { label: 'Say "maybe" and decide later', stress: 5, auto: true, why: 'Leaving it open means you carry the decision all evening.' }, // W6-EF 21 (weak fit: working memory is very short term)
           { label: 'Go, you\'ve earned it', stress: -20, prep: -1, kind: 'disengage', why: 'Impulsive desire (limbic system) wins over goal-directed motivation (PFC).' }, // W12 31
           { label: 'Go, but leave by 10', stress: -10, brain: 'pfc', why: 'A balance of wanting and liking keeps you engaged and motivated toward a goal.' }, // W12 18
           { label: 'Stay in and study', prep: 1, stress: 5, why: 'Goal-directed motivation (PFC) wins over impulsive desire (limbic system).' } // W12 31
@@ -158,7 +158,7 @@ var STORY = {
       { id: 'gta', act: 1, bg: 'bedroomNight', prop: 'thought',
         text: 'GTA 6 is out. Your roommate already has it pre-installed.',
         choices: [
-          { label: 'Watch them play "for a minute"', stress: 5, auto: true, why: 'Half-watching means you carry the decision all evening.' }, // (none)
+          { label: 'Watch them play "for a minute"', stress: 5, auto: true, why: 'Half-watching means you carry the decision all evening.' }, // W6-EF 21 (weak fit: working memory is very short term)
           { label: 'Play it, you\'ve earned it', stress: -20, prep: -1, kind: 'disengage', why: 'Impulsive desire (limbic system) wins over goal-directed motivation (PFC).' }, // W12 31
           { label: 'Study for an hour, then take a break', stress: -10, brain: 'pfc', why: 'A balance of wanting and liking keeps you engaged and motivated toward a goal.' }, // W12 18
           { label: 'Headphones on and study', prep: 1, stress: 5, why: 'Goal-directed motivation (PFC) wins over impulsive desire (limbic system).' } // W12 31
@@ -166,7 +166,7 @@ var STORY = {
       { id: 'krillion', act: 1, bg: 'bedroomNight', prop: 'phone',
         text: 'Today\'s Krillion just dropped.',
         choices: [
-          { label: 'Save today\'s dive for after you study', stress: 5, auto: true, why: 'Delaying the reward keeps it as something to look forward to.' }, // (none)
+          { label: 'Save today\'s dive for after you study', stress: 5, auto: true, why: 'Delaying the reward keeps it as something to look forward to.' }, // W12 14
           { label: 'Binge Unlimited mode, you\'ve earned it', stress: -20, prep: -1, kind: 'disengage', why: 'Dopamine drives "wanting": the desire for a reward, not the pleasure of it.' }, // W12 14
           { label: 'Play today\'s dive, then study', stress: -10, brain: 'pfc', why: 'A balance of wanting and liking keeps you engaged and motivated toward a goal.' }, // W12 18
           { label: 'Stay locked in. No Krillion today', prep: 1, stress: 5, why: 'Goal-directed motivation (PFC) wins over impulsive desire (limbic system).' } // W12 31
@@ -174,7 +174,7 @@ var STORY = {
       { id: 'halloween', act: 1, bg: 'bedroomNight', prop: 'phone',
         text: 'Halloween party tonight. Exam in 2 days.',
         choices: [
-          { label: 'Say "maybe" and decide later', stress: 5, auto: true, why: 'Leaving it open means you carry the decision all evening.' }, // (none)
+          { label: 'Say "maybe" and decide later', stress: 5, auto: true, why: 'Leaving it open means you carry the decision all evening.' }, // W6-EF 21 (weak fit: working memory is very short term)
           { label: 'It\'s Halloween, I\'m going out', stress: -20, prep: -1, kind: 'disengage', why: 'Impulsive desire (limbic system) wins over goal-directed motivation (PFC).' }, // W12 31
           { label: 'Go, but leave by 11', stress: -10, brain: 'pfc', why: 'A balance of wanting and liking keeps you engaged and motivated toward a goal.' }, // W12 18
           { label: 'Stay in and study', prep: 1, stress: 5, why: 'Goal-directed motivation (PFC) wins over impulsive desire (limbic system).' } // W12 31
@@ -186,7 +186,7 @@ var STORY = {
       choices: [
         { label: 'Headphones in, push through', stress: 5, auto: true, why: 'Blocking out noise uses up inhibitory control you need for the work.' }, // W6-Att 10
         { label: 'Join for 20 minutes', stress: -10, why: 'A balance of wanting and liking keeps you engaged and motivated toward a goal.' }, // W12 18
-        { label: 'Pack up and go to the library', stress: 5, mindset: 1, brain: 'pfc', why: 'Changing your environment is easier than fighting the distraction.' }, // (none)
+        { label: 'Pack up and go to the library', stress: 5, mindset: 1, brain: 'pfc', why: 'Changing your environment is easier than fighting the distraction.' }, // W6-Att 24; W6-Att 10
         { label: 'Join the party', stress: -15, kind: 'disengage', why: 'Impulsive desire (limbic system) wins over goal-directed motivation (PFC).' } // W12 31
       ] },
     // Concept: empathy; supportive relationships buffer stress.
@@ -217,15 +217,15 @@ var STORY = {
           { label: '"Same lol we\'re cooked"', stress: 10, auto: true, brain: 'amygdala', why: 'Emotion contagion: shared heart rate and breathing reflect shared arousal.' }, // W9-E 14
           { label: 'Send them your notes', mindset: 1, stress: 5, why: 'Feeling for someone, not just with them, supports prosocial motivation.' }, // W9-E 18
           { label: '"It\'s only one exam"', stress: -5, why: 'Reappraisal: reinterpreting the situation changes its emotional impact.' }, // W8-LB 38
-          { label: 'Turn on Do Not Disturb', why: 'Shutting out the stress cue protects you, but does not help them.' } // (none)
+          { label: 'Turn on Do Not Disturb', why: 'Shutting out the stress cue protects you, but does not help them.' } // W9-E 21
         ] },
       { id: 'exPosted', act: 2, bg: 'bedroomNight', prop: 'phone',
         text: 'Your ex just posted.',
         choices: [
           { label: 'Cyberstalk your ex', stress: 10, auto: true, brain: 'amygdala', why: 'Social rejection activates the same alarm system as physical pain.' }, // W9-SB 19 (Eisenberger and Lieberman, 2004)
           { label: 'Text a friend instead of reacting', mindset: 1, stress: 5, why: 'Humans have a basic and fundamental need to belong and connect.' }, // W9-SB 28
-          { label: 'Oops forgot to block them', stress: -5, why: 'Blocking removes the cue for good, so your body can settle.' }, // (none)
-          { label: 'Don\'t even pick up the phone', why: 'Not engaging keeps the cue out, for tonight at least.' } // (none)
+          { label: 'Oops forgot to block them', stress: -5, why: 'Blocking removes the cue for good, so your body can settle.' }, // W6-Att 24
+          { label: 'Don\'t even pick up the phone', why: 'Not engaging keeps the cue out, for tonight at least.' } // W6-Att 24
         ] },
       { id: 'tiktokNight', act: 2, bg: 'bedroomNight', prop: 'phone',
         text: 'Midnight. Doomscrolling time.',
@@ -249,7 +249,7 @@ var STORY = {
     { id: 'sleep', act: 2, bg: 'bedroomNight', prop: 'thought',
       text: '11 pm. Time for bed?',
       choices: [
-        { label: 'Just one more hour', stress: 5, auto: true, why: 'One more hour tends to become two, and it comes out of your sleep.' }, // (none)
+        { label: 'Just one more hour', stress: 5, auto: true, why: 'One more hour tends to become two, and it comes out of your sleep.' }, // W2 34; W6-EF 33 (sleep part only)
         { label: 'Sleep now, set two alarms', stress: -5, kind: 'calm', brain: 'hippocampus', why: 'Adequate sleep is crucial for neuroplasticity and memory consolidation.' }, // W2 34; W4 13
         { label: 'Pull an all-nighter', prep: 1, set: 'allNighter', stress: 15, brain: 'pfc', why: 'Under stress and sleep deprivation, the PFC and executive functions are the first to suffer, and to suffer the most. (Prep +1 now, -1 at the exam.)' }, // W6-EF 33
         { label: 'Make a one-page summary, then sleep', prep: 1, stress: 5, brain: 'hippocampus', why: 'One last bit of active study, then sleep consolidates it.' } // W4 13
@@ -303,7 +303,7 @@ var STORY = {
         { label: 'Listen in', stress: 10, auto: true, brain: 'amygdala', why: 'Comparing yourself to others can become a threat: "I must be doing something wrong".' }, // W8-Liv 23
         { label: 'Ask them to explain it quickly', stress: 10, why: 'You might learn it, but you invite more comparison.' }, // W8-Liv 23
         { label: 'Headphones in, eyes closed', stress: -5, kind: 'calm', why: 'Bottom-up (body) regulation calms the stress response.' }, // W8-LB 38
-        { label: 'Pretend you didn\'t even hear them', stress: -25, kind: 'disengage', why: 'Dismissing the threat lowers stress, and your engagement with it.' } // (none)
+        { label: 'Pretend you didn\'t even hear them', stress: -25, kind: 'disengage', why: 'Dismissing the threat lowers stress, and your engagement with it.' } // W12 5; W8-LB 34
       ] },
     // Concept: reframing the body's response; the amygdala does not respond to logic.
     { id: 'walkingIn', act: 3, bg: 'hallway', prop: 'thought',
@@ -318,7 +318,7 @@ var STORY = {
     { id: 'bathroom', act: 3, if: function (s) { return s.stress > 75; }, bg: 'bathroom', prop: 'phone',
       text: 'The bathroom. Two minutes before the start. You are panicking.',
       choices: [
-        { label: 'Scroll your phone', stress: -10, auto: true, kind: 'disengage', why: 'Scrolling distracts, but does little to calm the body.' }, // (none)
+        { label: 'Scroll your phone', stress: -5, auto: true, kind: 'disengage', why: 'Scrolling distracts, but does little to calm the body.' }, // W12 5
         { label: 'Consider all the ways this exam could go poorly', stress: 10, mindset: -1, why: 'Worry is thinking about negative things that might happen, and a stress-is-debilitating mindset feeds more stress.' }, // W8-LB 48; W8-Liv 20
         { label: 'Breathe out slower than you breathe in', stress: -15, kind: 'calm', brain: 'amygdala', why: 'Deep breathing shifts you from the sympathetic to the parasympathetic system.' }, // W8-LB 49
         { label: 'Text a friend "I\'m freaking out"', stress: -10, kind: 'calm', brain: 'amygdala', why: 'Name it to tame it: affect labelling reduces the amygdala\'s response (Lieberman et al., 2007).' } // W8-Liv 25; W8-LB 51
@@ -329,7 +329,7 @@ var STORY = {
       choices: [
         { label: 'Speed through to bank time', stress: 5, auto: true, why: 'Time does not predict grade.' }, // W8-Liv 24
         { label: 'Pace yourself. It isn\'t a race', stress: -5, kind: 'calm', why: '"Time does not predict grade. As long as I finish on time, I\'m good!"' }, // W8-Liv 24
-        { label: 'Double-check it, seems too easy', stress: 5, why: 'Doubting an easy question spends calm you will need later.' }, // (none)
+        { label: 'Double-check it, seems too easy', stress: 5, why: 'Doubting an easy question spends calm you will need later.' }, // W8-LB 48
         { label: 'Flip through the whole exam first', stress: 10, mindset: 1, why: 'Understanding the task first is metacognition, though seeing it all at once is stressful.' } // W5-Met 26
       ] },
     // Concept: cortisol impairs retrieval from long-term memory.
@@ -357,7 +357,7 @@ var STORY = {
         { label: 'Double check your work', why: 'Checking your answers is online metacognitive control: monitoring and correcting your mistakes.' }, // W5-Met 24, 26
         { label: 'Go back to the one you skipped', reopen: true, brain: 'pfc', why: 'Knowing which question you left is online metacognitive knowledge. (Only possible below 70 stress.)' }, // W5-Met 10
         { label: 'Rush back through all the questions to look at every answer again', stress: 10, auto: true, why: 'Your attention is limited. Spreading it over every answer at once leaves little for any of them.' }, // W6-Att 17
-        { label: 'Hand it in early, you\'re done', stress: -20, kind: 'disengage', why: 'Relief now, but you give up the time you had left.' } // (none)
+        { label: 'Hand it in early, you\'re done', stress: -20, kind: 'disengage', why: 'Relief now, but you give up the time you had left.' } // W12 5; W8-LB 34
       ] },
 
     // ---------- Act 4: After ----------
